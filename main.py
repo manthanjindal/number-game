@@ -41,11 +41,17 @@ computer_choice = random.randint(start,end)
 #get player's choice
 while attempts<3:
     print(f"\nYou have {lives} lives remaining! ")
-    player_guess = int(input("Enter your guess: "))
-    if player_guess == computer_choice:
-        print(f"You won!! with {lives} lives remaining")
-        break
+    player_guess = input("Enter your guess: ")
+    if player_guess.isdigit():
+        if start < int(player_guess) < end:
+            if player_guess == computer_choice:
+                print(f"You won!! with {lives} lives remaining")
+                break
+            else:
+                print("\nIncorrect Guess :(\n")
+                lives -= 1
+                attempts += 1
+        else:
+            print("Please enter a number within the range!")
     else:
-        print("Incorrect Guess:(\ntry again")
-        lives -= 1
-        attempts += 1
+        print("Please enter an integer only!")
