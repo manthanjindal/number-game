@@ -10,10 +10,6 @@ print("Loading...")
 time.sleep(1)
 print(".")
 time.sleep(1)
-print(".")
-time.sleep(1)
-print(".")
-time.sleep(1)
 print("welcome to the python number guessing game")
 time.sleep(1)
 print("You'll have to guess a number within a range of your choice in less than 3 attempts!")
@@ -38,13 +34,13 @@ time.sleep(1)
 print("the computer has chosen a number")
 computer_choice = random.randint(start,end)
 
-#get player's choice
-while attempts<3:
-    print(f"\nYou have {lives} lives remaining! ")
+while attempts < 3:
+    print(f"\nYou have {lives} lives remaining!")
     player_guess = input("Enter your guess: ")
+
     if player_guess.isdigit():
-        if start < int(player_guess) < end:
-            if player_guess == computer_choice:
+        if (start-1) < int(player_guess) < (end+1):
+            if int(player_guess) == computer_choice:
                 print(f"You won!! with {lives} lives remaining")
                 break
             else:
@@ -55,3 +51,6 @@ while attempts<3:
             print("Please enter a number within the range!")
     else:
         print("Please enter an integer only!")
+
+if attempts == 3:
+    print(f"\nGame Over! The number was {computer_choice}.")
