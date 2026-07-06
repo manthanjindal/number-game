@@ -1,15 +1,41 @@
 import random
+import time
 
 #lives and attempts
 lives = 3
 attempts = 0
 
+#welcome message
+print("Loading...")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print("welcome to the python number guessing game")
+time.sleep(1)
+print("You'll have to guess a number within a range of your choice in less than 3 attempts!")
+time.sleep(3)
+print("lets start")
+
 #enter range
+time.sleep(1)
 print("please enter the range")
 start = int(input("Starting: "))
 end = int(input("Ending: "))
 
 #get computer's choice
+print("The computer is picking a number...")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print(".")
+time.sleep(1)
+print("the computer has chosen a number")
 computer_choice = random.randint(start,end)
 
 #get player's choice
